@@ -11,7 +11,7 @@
     div {
       border: 1px solid;
       border-radius: 10px;
-      
+
     }
 
     #principal {
@@ -19,7 +19,7 @@
       padding: 20px;
       margin: auto;
       background:
-        linear-gradient(to right, cyan, pink)
+      linear-gradient(to bottom, white, darkcyan, darkblue);
     }
 
     .caixa {
@@ -39,16 +39,22 @@
       width: 100%;
       color: antiquewhite;
       background: gray;
-      display: flex;  
+      display: flex;
     }
 
-    body
-    {
-      background-image: url('https://png.pngtree.com/png-clipart/20231007/original/pngtree-cool-emoticon-cut-out-picture-image_13100993.png');
+    body {
+      background-image: url('https://wallpapers.com/images/hd/4k-tech-gjapvyu4olb6z340.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
     }
   </style>
 </head>
@@ -70,35 +76,34 @@
         <label for="SENHA:">SENHA
           <input type="password" name="SENHA">
       </div>
-      <br>  
-        <input id="botao" type="submit" value="CADASTRAR" name="cadastrar">
-      </div>
-          
-    </form>
+      <br>
+      <input id="botao" type="submit" value="CADASTRAR" name="cadastrar">
+  </div>
+
+  </form>
   </div>
   <div style="border: 0px;">
-    <?php    
-    
+    <?php
+
     include "conecta.php";
 
-    if(isset($_POST["cadastrar"]))
-      {
+    if (isset($_POST["cadastrar"])) {
       $usuario = $_POST["USUARIO"];
-      $senha = $_POST["SENHA"];       
+      $senha = $_POST["SENHA"];
       $sql = "insert into usuario(usuario, senha)
-      values('$usuario', '$senha')";  
-        if (mysqli_query($conexao, $sql)) {
-        
-          echo "Cadastrado com sucesso.";
+      values('$usuario', '$senha')";
+      if (mysqli_query($conexao, $sql)) {
 
-          header ("location: login.php");        
-        } else {
-          echo "Erro: " . $sql . "<br>" . mysqli_error
-          ($conexao);
-        }
-        mysqli_close($conexao);
+        echo "Cadastrado com sucesso.";
 
+        header("location: login.php");
+      } else {
+        echo "Erro: " . $sql . "<br>" . mysqli_error
+        ($conexao);
       }
+      mysqli_close($conexao);
+
+    }
     ?>
   </div>
 

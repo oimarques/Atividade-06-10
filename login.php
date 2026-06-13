@@ -19,7 +19,8 @@
       padding: 20px;
       margin: auto;
       background:
-        linear-gradient(to right, cyan, pink)
+      linear-gradient(to bottom, blue, green, black);
+
     }
 
     .caixa {
@@ -44,7 +45,7 @@
 
 
     body {
-      background-image: url('https://static.wikia.nocookie.net/hellokitty/images/a/a5/Mv-cinnamon.png/revision/latest/thumbnail/width/360/height/360?cb=20250930161135');
+      background-image: url('https://wallpapers.com/images/hd/4k-tech-acbb4nkybiijedhg.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
